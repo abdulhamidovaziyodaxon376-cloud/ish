@@ -1,69 +1,76 @@
-import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, BriefcaseBusiness, Building2, Check, Compass, Sparkles } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { SiteHeader } from "@/components/site-header";
+
+const seekerBenefits = ["Yuzlab yangi vakansiyalar", "Rezyume bilan tez ariza", "Sizga mos ish tavsiyalari"];
+const employerBenefits = ["Iqtidorli mutaxassislar bazasi", "Vakansiyani bepul joylash", "Nomzodlar bilan bevosita aloqa"];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <main className="min-h-screen overflow-hidden bg-slate-50 text-slate-900">
+      <SiteHeader accent="indigo" />
+      <section className="relative mx-auto max-w-7xl px-5 pb-16 pt-14 sm:px-8 sm:pb-24 sm:pt-20 lg:px-12 lg:pt-16">
+        <div className="pointer-events-none absolute -right-36 top-4 h-[27rem] w-[27rem] rounded-full border border-slate-200/80 sm:right-0 sm:top-8" />
+        <div className="pointer-events-none absolute -right-24 top-16 h-[22rem] w-[22rem] rounded-full border border-slate-200/60 sm:right-12 sm:top-20" />
+        <div className="relative max-w-5xl">
+          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-indigo-100 bg-indigo-50 px-3.5 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-indigo-600">
+            <Sparkles className="size-3.5" /> Oʻzbekistonda ish topishning oson yoʻli
+          </div>
+          <h1 className="max-w-5xl text-4xl font-semibold leading-[1.06] tracking-[-0.045em] sm:text-5xl lg:text-6xl">
+            Oʻz kelajagingizni toping yoki eng yaxshi mutaxassislarni yollang
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+          <div className="mt-8 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+            <p className="max-w-xl text-base leading-7 text-slate-600 sm:text-lg">
+              Ish qidirish va jamoangizni kengaytirish uchun bitta qulay manzil. Sizga mos imkoniyatlar shu yerdan boshlanadi.
+            </p>
+            <Link href="/jobs" className="inline-flex w-fit items-center gap-2 border-b border-indigo-600 pb-1 text-sm font-semibold text-indigo-600 transition-all duration-200 hover:text-indigo-700">
+              Barcha vakansiyalar <ArrowRight className="size-4" />
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="relative mt-12 grid gap-5 lg:mt-16 lg:grid-cols-2 lg:gap-6">
+          <Card className="group relative border border-slate-200/80 bg-white p-0 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:scale-[1.01]">
+            <CardContent className="flex h-full flex-col p-7 sm:p-9 lg:p-10">
+              <div className="flex items-start justify-between">
+                <div className="grid size-14 place-items-center rounded-xl bg-indigo-50 text-indigo-600"><BriefcaseBusiness className="size-6" /></div>
+                <span className="rounded-lg bg-indigo-50 px-2.5 py-1 text-sm font-medium text-indigo-600">01 / Nomzod</span>
+              </div>
+              <h2 className="mt-9 text-3xl font-semibold tracking-[-0.04em] sm:text-4xl">Ish izlayapman</h2>
+              <p className="mt-3 max-w-md leading-7 text-slate-600">Tajribangiz va maqsadlaringizga mos ishni toping. Keyingi qadamingiz siz oʻylagandan yaqinroq.</p>
+              <ul className="mt-7 grid gap-3 text-sm font-medium text-slate-700">
+                {seekerBenefits.map((benefit) => <li key={benefit} className="flex items-center gap-2.5"><Check className="size-4 text-indigo-600" />{benefit}</li>)}
+              </ul>
+              <Button nativeButton={false} className="mt-9 h-12 w-full justify-between rounded-xl bg-indigo-600 px-5 text-white transition-all duration-200 hover:bg-indigo-700 sm:w-fit sm:min-w-56" render={<Link href="/jobs" />}>
+                Vakansiyalarni koʻrish <ArrowRight className="size-4" />
+              </Button>
+            </CardContent>
+          </Card>
+
+          <Card className="group relative border border-slate-200/80 bg-white p-0 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:scale-[1.01]">
+            <CardContent className="flex h-full flex-col p-7 sm:p-9 lg:p-10">
+              <div className="flex items-start justify-between">
+                <div className="grid size-14 place-items-center rounded-xl bg-indigo-50 text-indigo-600"><Building2 className="size-6" /></div>
+                <span className="rounded-lg bg-indigo-50 px-2.5 py-1 text-sm font-medium text-indigo-600">02 / Ish beruvchi</span>
+              </div>
+              <h2 className="mt-9 text-3xl font-semibold tracking-[-0.04em] sm:text-4xl">Ishchi izlayapman</h2>
+              <p className="mt-3 max-w-md leading-7 text-slate-600">Jamoangiz uchun toʻgʻri insonni toping. Vakansiya eʼlon qiling va faol nomzodlar bilan tanishing.</p>
+              <ul className="mt-7 grid gap-3 text-sm font-medium text-slate-700">
+                {employerBenefits.map((benefit) => <li key={benefit} className="flex items-center gap-2.5"><Check className="size-4 text-indigo-600" />{benefit}</li>)}
+              </ul>
+              <Button nativeButton={false} className="mt-9 h-12 w-full justify-between rounded-xl bg-indigo-600 px-5 text-white transition-all duration-200 hover:bg-indigo-700 sm:w-fit sm:min-w-56" render={<Link href="/jobs/create" />}>
+                Vakansiya joylash <ArrowRight className="size-4" />
+              </Button>
+            </CardContent>
+          </Card>
         </div>
-      </main>
-    </div>
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 border-t border-slate-200 pt-7 text-sm text-slate-600 sm:justify-start">
+          <span className="inline-flex items-center gap-2"><Compass className="size-4 text-slate-500" /> Butun Oʻzbekiston boʻylab</span>
+          <span>Har kuni yangi imkoniyatlar</span>
+        </div>
+      </section>
+    </main>
   );
 }
